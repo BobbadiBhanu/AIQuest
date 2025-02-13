@@ -5,19 +5,18 @@
     box-sizing: border-box;
 }
 
-/* Body styling with smooth background transition */
+/* Body styling with background image */
 body {
     font-family: 'Poppins', sans-serif;
-    background: url('https://www.w3schools.com/w3images/mountains.jpg') no-repeat center center fixed;
+    background: url('https://www.w3schools.com/w3images/forest.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-attachment: fixed;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
-    transition: background-image 1s ease; /* Smooth transition for background change */
+    transition: background 0.3s ease;
 }
 
 /* Container styling */
@@ -29,7 +28,8 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     max-width: 600px;
     margin: 0 auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 /* Button styling */
@@ -48,6 +48,7 @@ button {
 button:hover {
     background-color: #feb47b;
     transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(255, 99, 71, 0.5);
 }
 
 button:active {
@@ -63,20 +64,35 @@ button:active {
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.6;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Text shadow for quotes */
+    max-width: 100%; /* Ensure the box is flexible */
+    word-wrap: break-word; /* Prevent long words from overflowing */
+    white-space: normal; /* Allow the text to wrap normally */
 }
 
-/* Text animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Spinner styling (for loading effect) */
+.spinner {
+    border: 4px solid transparent;
+    border-top: 4px solid #ff7e5f;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
 }
 
-#quoteText {
-    animation: fadeIn 1s ease-out;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Background Music */
+#backgroundMusic {
+    display: none;
+}
+
+/* Parallax effect for the background */
+body {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
