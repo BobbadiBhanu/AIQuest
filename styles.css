@@ -26,7 +26,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -55,6 +55,36 @@ button:active {
     transform: scale(0.98);
 }
 
+/* Video container styling */
+.video-container {
+    margin-top: 2rem;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+video {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Message styling */
+.message h2 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ff7e5f;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 /* Quote box styling */
 .quote-box {
     margin-top: 20px;
@@ -65,9 +95,6 @@ button:active {
     font-weight: 600;
     line-height: 1.6;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Text shadow for quotes */
-    max-width: 100%; /* Ensure the box is flexible */
-    word-wrap: break-word; /* Prevent long words from overflowing */
-    white-space: normal; /* Allow the text to wrap normally */
 }
 
 /* Spinner styling (for loading effect) */
@@ -83,16 +110,4 @@ button:active {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-/* Background Music */
-#backgroundMusic {
-    display: none;
-}
-
-/* Parallax effect for the background */
-body {
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
 }
