@@ -27,6 +27,7 @@ const constantColor = '#ffffff';  // You can change this to any color you like
 // Get elements
 const quoteDisplay = document.getElementById('quoteText');
 const generateQuoteBtn = document.getElementById('generateQuoteBtn');
+const loadingSpinner = document.getElementById('loading');
 
 // Function to set the constant background image
 function setBackground() {
@@ -40,15 +41,23 @@ function setBackground() {
 function getQuote() {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-    // Add a fade-out effect before the new quote appears
-    quoteDisplay.style.opacity = 0;
-    setTimeout(() => {
-        quoteDisplay.textContent = `"${randomQuote}"`;
-        quoteDisplay.style.opacity = 1;
-    }, 300); // Delay before quote appears (for smooth transition)
+    // Show the loading spinner while generating the new quote
+    loadingSpinner.style.display = 'block';
 
-    // Set the constant color for the quote text
-    quoteDisplay.style.color = constantColor;
+    setTimeout(() => {
+        // Add a fade-out effect before the new quote appears
+        quoteDisplay.style.opacity = 0;
+        setTimeout(() => {
+            quoteDisplay.textContent = `"${randomQuote}"`;
+            quoteDisplay.style.opacity = 1;
+        }, 300); // Delay before quote appears (for smooth transition)
+
+        // Set the constant color for the quote text
+        quoteDisplay.style.color = constantColor;
+
+        // Hide the loading spinner after the quote is displayed
+        loadingSpinner.style.display = 'none';
+    }, 500);
 }
 
 // Event listener for button click
