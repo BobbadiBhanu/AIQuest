@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-powered Quote Generator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>AI-Powered Quote Generator</title>
+    
+    <!-- Google Fonts (Optional: You can add the fonts for better styling) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora&display=swap" rel="stylesheet">
+
+    <!-- Link to your CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="container">
-        <h1>Empower Your Spirit: Inspiring Quotes at Your Fingertips</h1>
+        <h1>Uplifting Words to Brighten Your Path</h1>
+        <div id="quoteText" class="quote-box"></div>
         <button id="generateQuoteBtn">Generate Quote</button>
-        <div id="quoteDisplay" class="quote-box">
-            <p id="quoteText">Click the button to get a motivational quote!</p>
+        <!-- Optional: Add a loading spinner -->
+        <div id="loading" style="display:none; text-align:center;">
+            <div class="spinner"></div>
         </div>
     </div>
 
+    <!-- Optional: Background Music -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="your-music-file.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Link to your JS file -->
     <script src="script.js"></script>
 </body>
 </html>
