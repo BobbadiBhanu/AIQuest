@@ -18,24 +18,12 @@ const quotes = [
     "Don’t stop when you’re tired. Stop when you’re done."
 ];
 
-// Fixed background image (calm and interactive)
-const backgroundImage = 'https://www.w3schools.com/w3images/forest.jpg';  // Example calm image
-
-// Set a constant color for the quotes (e.g., white color for text)
-const constantColor = '#ffffff';  // You can change this to any color you like
-
 // Get elements
 const quoteDisplay = document.getElementById('quoteText');
 const generateQuoteBtn = document.getElementById('generateQuoteBtn');
 const loadingSpinner = document.getElementById('loading');
-
-// Function to set the constant background image
-function setBackground() {
-    document.body.style.transition = 'background-image 1s ease'; // Smooth transition for background change
-    document.body.style.backgroundImage = `url(${backgroundImage})`;
-    document.body.style.backgroundSize = 'cover';  // Ensure it covers the whole page
-    document.body.style.backgroundPosition = 'center';  // Center the background image
-}
+const video = document.getElementById('inspiringVideo');
+const message = document.querySelector('.message h2');
 
 // Function to get a random quote
 function getQuote() {
@@ -43,6 +31,10 @@ function getQuote() {
 
     // Show the loading spinner while generating the new quote
     loadingSpinner.style.display = 'block';
+
+    // Hide the video and message while generating a new quote
+    video.style.display = 'none';
+    message.style.display = 'none';
 
     setTimeout(() => {
         // Add a fade-out effect before the new quote appears
@@ -52,8 +44,9 @@ function getQuote() {
             quoteDisplay.style.opacity = 1;
         }, 300); // Delay before quote appears (for smooth transition)
 
-        // Set the constant color for the quote text
-        quoteDisplay.style.color = constantColor;
+        // Show video and message after quote change
+        video.style.display = 'block';
+        message.style.display = 'block';
 
         // Hide the loading spinner after the quote is displayed
         loadingSpinner.style.display = 'none';
@@ -64,5 +57,4 @@ function getQuote() {
 generateQuoteBtn.addEventListener('click', getQuote);
 
 // Optionally, generate the first quote on page load
-setBackground();
 getQuote();
