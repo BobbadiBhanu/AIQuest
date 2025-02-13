@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Quote Generator</title>
-    
-    <!-- Google Fonts (Optional: You can add the fonts for better styling) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora&display=swap" rel="stylesheet">
-
-    <!-- Link to your CSS file -->
+    <title>InspireMe: AI-Powered Motivational Quotes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>Uplifting Words to Brighten Your Path</h1>
-        <div id="quoteText" class="quote-box"></div>
-        <button id="generateQuoteBtn">Generate Quote</button>
-        <!-- Optional: Add a loading spinner -->
-        <div id="loading" style="display:none; text-align:center;">
-            <div class="spinner"></div>
+        <h1>InspireMe</h1>
+        <div class="quote-box" id="quoteText">
+            <!-- Dynamic quote will appear here -->
         </div>
+        <button id="generateQuoteBtn">Generate Quote</button>
+
+        <!-- "Have a Nice Day" message -->
+        <div class="message">
+            <h2>Have a Nice Day!</h2>
+        </div>
+
+        <!-- Video section -->
+        <div class="video-container">
+            <video id="inspiringVideo" controls autoplay muted>
+                <!-- You can replace the source with any video link or local video -->
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="loading" class="spinner"></div>
     </div>
 
-    <!-- Optional: Background Music -->
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="your-music-file.mp3" type="audio/mp3">
-    </audio>
-
-    <!-- Link to your JS file -->
     <script src="script.js"></script>
 </body>
 </html>
